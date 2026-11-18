@@ -86,18 +86,25 @@ public class ReadJson {
 
             String name = (String)jsonObject.get("name");
             String eyeColor = (String)jsonObject.get("eye_color");
-           
-
             org.json.simple.JSONArray msg = (org.json.simple.JSONArray) jsonObject.get("films");
+
+            org.json.simple.JSONArray msg2 = (org.json.simple.JSONArray) jsonObject.get("starships");
             int n =   msg.size(); //(msg).length();
             for (int i = 0; i < n; ++i) {
                 String test =(String) msg.get(i);
                 System.out.println(test);
                 // System.out.println(person.getInt("key"));
             }
+            int n2 = msg2.size();
+            for (int i = 0; i < n2; ++i) {
+                String test2 = (String) msg2.get(i);
+                System.out.println(test2);
+            }
             String height= (String)jsonObject.get("height");
             System.out.println(name);
-            //print out the eye color of darth vader
+            System.out.println(eyeColor);
+            System.out.println(height);
+
         }
 
         catch (Exception e) {
@@ -109,5 +116,3 @@ public class ReadJson {
 
     }
 }
-
-
